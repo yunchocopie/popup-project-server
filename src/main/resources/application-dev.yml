@@ -6,9 +6,11 @@ server:
     session:
       timeout: 30m
       tracking-modes: cookie
-  port: 8080
+  port: 15028
 
 spring:
+  config:
+    import: optional:file:.env[.properties]
   mustache:
     servlet:
       expose-session-attributes: true
