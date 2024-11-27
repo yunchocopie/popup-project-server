@@ -16,6 +16,13 @@ spring:
     servlet:
       expose-session-attributes: true
       expose-request-attributes: true
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/pophub_2024538?useSSL=false&serverTimezone=UTC
