@@ -14,13 +14,12 @@ public class Check {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "description")
-    private String description;
-
-    @Column(name = "selected_date", nullable = false)
+    @Column(nullable = false)
     private String selectedDate;
 
-    @Column(name = "user_id", nullable = false)
+    @Column(nullable = false)
     private String userId;
+
+    private String description;
 
 }
