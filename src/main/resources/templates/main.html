@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 페이지</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+<div class="bg-white shadow-lg rounded-lg p-8 max-w-md w-full text-center">
+    <h1 class="text-2xl font-bold mb-8">관리자 페이지</h1>
+    <div class="flex justify-around">
+        <a href="/products">
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+            재고 관리
+        </button>
+        </a>
+        <a href="/check/reservation">
+            <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">
+                예약 관리
+            </button>
+        </a>
+    </div>
+</div>
+</body>
+</html>

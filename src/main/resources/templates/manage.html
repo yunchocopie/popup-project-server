@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Product Management</title>
+</head>
+<body>
+<h1>Product Management</h1>
+<form method="POST" action="/products" enctype="multipart/form-data">
+    <label>Product Name:</label>
+    <input type="text" name="name" required><br>
+    <label>Image:</label>
+    <input type="file" name="image" required><br>
+    <label>Price:</label>
+    <input type="number" name="price" required><br>
+    <label>In Stock:</label>
+    <input type="checkbox" name="inStock"><br>
+    <button type="submit">Add Product</button>
+</form>
+
+<h2>Product List</h2>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Image</th>
+        <th>In Stock</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product : ${products}">
+        <td th:text="${product.id}"></td>
+        <td th:text="${product.name}"></td>
+        <td><img th:src="@{${product.imageUrl}}" width="100"></td>
+        <td th:text="${product.price}"></td>
+        <td>
+            <form th:action="@{/products/{id}/stock(id=${product.id})}" method="POST">
+                <input type="hidden" name="_method" value="PATCH">
+                <input type="checkbox" name="inStock" th:checked="${product.inStock}">
+                <button type="submit">Update</button>
+            </form>
+        </td>
+        <td>
+            <form th:action="@{/products/{id}(id=${product.id})}" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

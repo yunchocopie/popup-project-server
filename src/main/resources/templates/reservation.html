@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Reservation List</title>
+</head>
+<body>
+<h1>Reservation List</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Description</th>
+        <th>Selected Date</th>
+        <th>User ID</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Thymeleaf를 사용하여 체크 리스트 렌더링 -->
+    <tr th:each="check : ${checks}">
+        <td th:text="${check.id}"></td>
+        <td th:text="${check.description}"></td>
+        <td th:text="${check.selectedDate}"></td>
+        <td th:text="${check.userId}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
